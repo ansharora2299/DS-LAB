@@ -79,6 +79,7 @@ printf("INVALID POSITION\n");
 return;
 }
 NN->r=temp->r;
+temp->r->l=NN;
 temp->r=NN;
 NN->l=temp;
 }
