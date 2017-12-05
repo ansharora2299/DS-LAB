@@ -144,7 +144,7 @@ struct NODE* TEMP=LAST;
 struct NODE* TEMP1=NULL;
 if(LAST==NULL)
 printf("List is Empty\n");
-else if(LAST->LINK==NULL&&pos==1)
+else if(LAST->LINK==LAST&&pos==1)
 {
 LAST=NULL;
 free(TEMP);
