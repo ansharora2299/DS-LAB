@@ -52,7 +52,6 @@ int eval(NODE root)
     case '-':return eval(root->llink) - eval(root->rlink);
     case '*':return eval(root->llink) * eval(root->rlink);
     case '/':return eval(root->llink) / eval(root->rlink);
-    case '$':return pow(eval(root->llink),eval(root->rlink));
     case '^':return pow(eval(root->llink),eval(root->rlink));
     default:
       if(isalpha(root->info))
