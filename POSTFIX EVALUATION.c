@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 int top=-1,i=0,s[30];
 int push(int el)
 {
@@ -35,6 +36,7 @@ printf("Divide by zero error");
 else
 push(op1/op2);
 break;
+case '^':push(pow(op1,op2));break;
 }
 }
 }
