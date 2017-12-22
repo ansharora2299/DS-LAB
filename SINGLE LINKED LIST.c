@@ -94,7 +94,7 @@ return;
 }
 void dle()
 {
-struct NODE* TEMP1;
+struct NODE* TEMP1=START;
 struct NODE* TEMP2=NULL;
 if(START==NULL)
 {
@@ -103,7 +103,7 @@ return;
 }
 else if(START->LINK==NULL)
 {
-free(START);
+free(TEMP1);
 START=NULL;
 return;
 }
