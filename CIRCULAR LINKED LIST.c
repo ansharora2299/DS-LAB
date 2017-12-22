@@ -149,7 +149,7 @@ else if(LAST->LINK==LAST&&pos==1)
 LAST=NULL;
 free(TEMP);
 }
-else if(LAST->LINK!=NULL&&pos==1)
+else if(LAST->LINK!=LAST&&pos==1)
 {
 TEMP=LAST->LINK;
 LAST->LINK=TEMP->LINK;
