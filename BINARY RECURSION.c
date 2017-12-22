@@ -14,9 +14,10 @@ return bs(a,key,low,mid-1);
 }
 void main()
 {
-int a[10],key,i,pos,n;
+int key,i,pos,n;
 printf("Enter the array size\n");
 scanf("%d",&n);
+int a[n];
 printf("Enter the array elements\n");
 for(i=0;i<n;i++)
 scanf("%d",&a[i]);
