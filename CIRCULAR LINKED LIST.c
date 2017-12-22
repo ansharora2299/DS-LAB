@@ -149,6 +149,10 @@ else if(LAST->LINK==LAST&&pos==1)
 LAST=NULL;
 free(TEMP);
 }
+else if(LAST->LINK==LAST&&pos>1)
+{
+printf("Invalid Position\n");
+}
 else if(LAST->LINK!=LAST&&pos==1)
 {
 TEMP=LAST->LINK;

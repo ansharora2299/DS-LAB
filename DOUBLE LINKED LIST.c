@@ -51,9 +51,9 @@ int c=1;
 NODE NN;
 NN = (NODE)malloc(sizeof(struct node));
 NN->info = item;
+NN->l=NN->r=NULL;
 if(start==NULL&&pos==1)
 {
-NN->l=NN->r=NULL;
 start=NN;
 return;
 }
@@ -64,8 +64,8 @@ return;
 }
 else if(start!=NULL&&pos==1)
 {
-NN->l=NULL;
 NN->r=start;
+start->l=NN;
 start=NN;
 return;
 }
@@ -80,10 +80,16 @@ if(temp==NULL)
 printf("INVALID POSITION\n");
 return;
 }
+else if(temp->r!=NULL){
 NN->r=temp->r;
 temp->r->l=NN;
 temp->r=NN;
 NN->l=temp;
+return;
+}
+temp->r=NN;
+NN->l=temp;
+return;
 }
 void dlb()
 {
@@ -141,10 +147,16 @@ return;
 void delpos(int pos)
 {
 NODE temp=start;
-if(start->r==NULL&&pos==1)
+if(start==NULL)
+printf("DLL Is Empty\n");
+else if(start->r==NULL&&pos==1)
 {
 start=NULL;
 free(temp);
+}
+else if(start->r==NULL&&pos>1)
+{
+printf("Invalid Position\n");
 }
 else if(start->r!=NULL&&pos==1)
 {
@@ -161,6 +173,13 @@ while(temp!=NULL&&i!=(pos-1))
 temp=temp->r;
 i++;
 }
+if(temp==NULL)
+{
+printf("Invalid Position\n");
+return;
+}
+else
+{
 temp1=temp->r;
 if(temp1->r!=NULL)
 {
@@ -172,6 +191,7 @@ else
 {
 temp->r=NULL;
 free(temp1);
+}
 }
 }
 }
