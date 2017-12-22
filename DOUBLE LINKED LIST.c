@@ -15,8 +15,10 @@ NN->info = item;
 NN->l=NULL;
 if(start==NULL)
 NN->r=NULL;
-else
+else{
 NN->r=start;
+start->l=NN;
+}
 start=NN;
 return;
 }
@@ -160,7 +162,7 @@ temp=temp->r;
 i++;
 }
 temp1=temp->r;
-if(temp->r->r!=NULL)
+if(temp1->r!=NULL)
 {
 temp->r=temp1->r;
 temp1->r->l=temp;
@@ -235,4 +237,3 @@ break;
 }
 }
 }
-
