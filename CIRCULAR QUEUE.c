@@ -41,7 +41,7 @@ else
 {
 printf("Queue elements are\n");
 temp=count;
-for(i=f;temp!=0;i++)
+for(i=f;temp!=0;i=(i+1)%size)
 {
 printf("%d ",cq[i]);
 temp--;
