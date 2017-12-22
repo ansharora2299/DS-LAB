@@ -121,25 +121,6 @@ free(TEMP1);
 return;
 }
 }
-void display()
-{
-struct NODE* TEMP=NULL;
-if(START==NULL)
-{
-printf("SLL is Empty\n");
-return;
-}
-else
-{
-TEMP=START;
-while(TEMP!=NULL)
-{
-printf("%d ",TEMP->INFO);
-TEMP=TEMP->LINK;
-}
-return;
-}
-}
 void delpos(int pos)
 {
 struct NODE* TEMP=START;
@@ -163,7 +144,7 @@ TEMP=TEMP->LINK;
 i++;
 }
 TEMP1=TEMP->LINK;
-if(TEMP->LINK->LINK!=NULL)
+if(TEMP1->LINK!=NULL)
 {
 TEMP->LINK=TEMP1->LINK;
 free(TEMP1);
@@ -173,6 +154,25 @@ else
 TEMP->LINK=NULL;
 free(TEMP1);
 }
+}
+}
+void display()
+{
+struct NODE* TEMP=NULL;
+if(START==NULL)
+{
+printf("SLL is Empty\n");
+return;
+}
+else
+{
+TEMP=START;
+while(TEMP!=NULL)
+{
+printf("%d ",TEMP->INFO);
+TEMP=TEMP->LINK;
+}
+return;
 }
 }
 void main()
